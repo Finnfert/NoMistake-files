@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ogq8qd0k1pfw"]
+
+[ext_resource type="Script" path="res://cursor_follow.gd" id="1_20kvs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sx4xw"]
+radius = 9.21954
+
+[node name="CursorFollow" type="CharacterBody2D"]
+top_level = true
+script = ExtResource("1_20kvs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_sx4xw")

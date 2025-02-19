@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=3 uid="uid://daekjflpl6y42"]
+
+[ext_resource type="SpriteFrames" uid="uid://bm6ovb0bnmmf2" path="res://EraserAnim.tres" id="1_7wgsb"]
+[ext_resource type="Script" path="res://eraser.gd" id="1_fiuei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_da1tn"]
+size = Vector2(16, 18)
+
+[sub_resource type="Animation" id="Animation_o0jlo"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:speedanimmod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.40625, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.40625, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ap1um"]
+resource_name = "Walk"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:speedanimmod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.333333, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.40625, -0.25, 0, 0.25, 0, 0.53125, -0.25, 0, 0.25, 0, 0.40625, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.333333, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.40625, -0.25, 0, 0.25, 0, 0.296875, -0.25, 0, 0.25, 0, 0.40625, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.333333, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_up387"]
+_data = {
+"RESET": SubResource("Animation_o0jlo"),
+"Walk": SubResource("Animation_ap1um")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rxru1"]
+radius = 15.0
+
+[node name="Eraser" type="CharacterBody2D" groups=["Eraser"]]
+z_index = 1
+collision_layer = 5
+script = ExtResource("1_fiuei")
+damage = 0.05
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_da1tn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_up387")
+}
+autoplay = "Walk"
+speed_scale = 1.5
+
+[node name="Area2D" type="Area2D" parent="." groups=["Eraser"]]
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_rxru1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.19209e-06, 3.5)
+scale = Vector2(0.40625, 0.40625)
+sprite_frames = ExtResource("1_7wgsb")
+animation = &"Full"
+autoplay = "Full"

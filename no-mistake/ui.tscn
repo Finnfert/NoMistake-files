@@ -1,0 +1,168 @@
+[gd_scene load_steps=8 format=3 uid="uid://gthrnq420bee"]
+
+[ext_resource type="Script" path="res://canvas_layer.gd" id="1_mkhf8"]
+[ext_resource type="Texture2D" uid="uid://cr6n5dnyb377v" path="res://360_F_256485871_Edb2l17VVEiwsgjjRY2itTxMymlhRqGW.jpg" id="1_vvvjr"]
+[ext_resource type="Texture2D" uid="uid://47f44gcaouad" path="res://Ui Pencil.png" id="2_ep2gn"]
+[ext_resource type="FontFile" uid="uid://bxbbo1f8uygnf" path="res://Pencilant Script.ttf" id="4_qecuo"]
+[ext_resource type="Texture2D" uid="uid://u1kf08s3ejbb" path="res://Frame.png" id="5_l5iy5"]
+[ext_resource type="Texture2D" uid="uid://bbi48ataw2e5" path="res://Sprites/Canon.png" id="6_5uveh"]
+[ext_resource type="Texture2D" uid="uid://dpg3u2awwufth" path="res://Sprites/Wall.png" id="6_scvqp"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_mkhf8")
+
+[node name="360F256485871Edb2l17vvEiwsgjjRy2ItTxMymlhRqGw" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(1028, 246)
+scale = Vector2(1.33889, 1.52778)
+texture = ExtResource("1_vvvjr")
+
+[node name="UiPencil" type="Sprite2D" parent="CanvasLayer"]
+top_level = true
+position = Vector2(693, 91)
+scale = Vector2(3, 3)
+texture = ExtResource("2_ep2gn")
+hframes = 7
+vframes = 8
+
+[node name="Line2D" type="Line2D" parent="CanvasLayer"]
+position = Vector2(667, -31)
+points = PackedVector2Array(0, 600, 0, 0)
+default_color = Color(0, 0, 0, 1)
+
+[node name="PencilLabel" type="Label" parent="CanvasLayer"]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 712.0
+offset_top = 28.0
+offset_right = 873.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("4_qecuo")
+theme_override_font_sizes/font_size = 26
+text = "Graphite"
+
+[node name="Resorce_count" type="Label" parent="CanvasLayer"]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 677.0
+offset_top = 62.0
+offset_right = 838.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("4_qecuo")
+theme_override_font_sizes/font_size = 26
+text = "100%"
+horizontal_alignment = 1
+
+[node name="Base Health" type="Label" parent="CanvasLayer"]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 722.0
+offset_top = 95.0
+offset_right = 883.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("4_qecuo")
+theme_override_font_sizes/font_size = 26
+text = "Health"
+
+[node name="Health_count" type="Label" parent="CanvasLayer"]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 677.0
+offset_top = 126.0
+offset_right = 838.0
+offset_bottom = 191.0
+theme_override_fonts/font = ExtResource("4_qecuo")
+theme_override_font_sizes/font_size = 26
+text = "100%"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Health_count"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -5.0
+offset_top = 118.0
+offset_right = 137.0
+offset_bottom = 344.0
+scale = Vector2(0.9, 0.9)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Health_count/ScrollContainer"]
+layout_mode = 2
+
+[node name="Wall Button" type="Button" parent="CanvasLayer/Health_count/ScrollContainer/VBoxContainer"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qecuo")
+theme_override_font_sizes/font_size = 25
+text = "Wall"
+icon = ExtResource("5_l5iy5")
+flat = true
+
+[node name="Wall" type="Sprite2D" parent="CanvasLayer/Health_count/ScrollContainer/VBoxContainer/Wall Button"]
+position = Vector2(35.5556, 35.5556)
+scale = Vector2(0.916666, 0.881945)
+texture = ExtResource("6_scvqp")
+
+[node name="Canon Button" type="Button" parent="CanvasLayer/Health_count/ScrollContainer/VBoxContainer"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qecuo")
+theme_override_font_sizes/font_size = 25
+text = "Cannon
+30%"
+icon = ExtResource("5_l5iy5")
+flat = true
+
+[node name="Canon2" type="Sprite2D" parent="CanvasLayer/Health_count/ScrollContainer/VBoxContainer/Canon Button"]
+position = Vector2(35.5557, 37.3334)
+rotation = 0.731305
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("6_5uveh")
+hframes = 3
+vframes = 3
+
+[node name="Canon" type="Sprite2D" parent="CanvasLayer/Health_count/ScrollContainer/VBoxContainer/Canon Button"]
+position = Vector2(38.8889, 35.1111)
+rotation = 0.83959
+scale = Vector2(0.572917, 0.572917)
+texture = ExtResource("6_5uveh")
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="? Button" type="Button" parent="CanvasLayer/Health_count/ScrollContainer/VBoxContainer"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qecuo")
+theme_override_font_sizes/font_size = 25
+text = "???
+"
+icon = ExtResource("5_l5iy5")
+flat = true
+
+[node name="? Button2" type="Button" parent="CanvasLayer/Health_count/ScrollContainer/VBoxContainer"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qecuo")
+theme_override_font_sizes/font_size = 25
+text = "???
+"
+icon = ExtResource("5_l5iy5")
+flat = true
+
+[node name="? Button3" type="Button" parent="CanvasLayer/Health_count/ScrollContainer/VBoxContainer"]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qecuo")
+theme_override_font_sizes/font_size = 25
+text = "???
+"
+icon = ExtResource("5_l5iy5")
+flat = true
+
+[node name="360F256485871Edb2l17vvEiwsgjjRy2ItTxMymlhRqGw" type="Sprite2D" parent="CanvasLayer/Health_count"]
+position = Vector2(-628, 278)
+scale = Vector2(0.110185, 0.166667)
+texture = ExtResource("1_vvvjr")
+
+[node name="Frame" type="Sprite2D" parent="CanvasLayer/Health_count"]
+position = Vector2(-628, 278)
+texture = ExtResource("5_l5iy5")

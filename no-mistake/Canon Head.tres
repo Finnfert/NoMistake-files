@@ -1,0 +1,63 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://k83jl3d7d7m1"]
+
+[ext_resource type="Texture2D" uid="uid://bbi48ataw2e5" path="res://Sprites/Canon.png" id="1_vrgsc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yum5b"]
+atlas = ExtResource("1_vrgsc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl012"]
+atlas = ExtResource("1_vrgsc")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02gdl"]
+atlas = ExtResource("1_vrgsc")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xfua"]
+atlas = ExtResource("1_vrgsc")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_473sc"]
+atlas = ExtResource("1_vrgsc")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g12db"]
+atlas = ExtResource("1_vrgsc")
+region = Rect2(128, 128, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yum5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl012")
+}],
+"loop": true,
+"name": &"Good",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02gdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xfua")
+}],
+"loop": true,
+"name": &"Mid",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_473sc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g12db")
+}],
+"loop": true,
+"name": &"Worst",
+"speed": 12.0
+}]

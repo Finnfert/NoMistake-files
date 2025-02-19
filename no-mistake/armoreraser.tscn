@@ -1,0 +1,242 @@
+[gd_scene load_steps=11 format=3 uid="uid://d1m2d5f5f5586"]
+
+[ext_resource type="Script" path="res://eraser.gd" id="1_ipnig"]
+[ext_resource type="SpriteFrames" uid="uid://unfj3wpd68ba" path="res://armoreraser.tres" id="2_1ycdq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_da1tn"]
+size = Vector2(10, 11)
+
+[sub_resource type="Animation" id="Animation_e1q4k"]
+resource_name = "Hop"
+
+[sub_resource type="Animation" id="Animation_o0jlo"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:speedanimmod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.40625, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.40625, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-4.76837e-07, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.25, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ap1um"]
+resource_name = "Walk"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:speedanimmod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.333333, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.40625, -0.25, 0, 0.25, 0, 0.53125, -0.25, 0, 0.25, 0, 0.40625, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.333333, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.40625, -0.25, 0, 0.25, 0, 0.296875, -0.25, 0, 0.25, 0, 0.40625, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.333333, 1)
+}
+
+[sub_resource type="Animation" id="Animation_uoo8v"]
+resource_name = "hop"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:speedanimmod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.3, 0.5, 1.06667)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.40625, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.28125, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.40625, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.0166667, 0.233333, 0.633333, 1.06667, 1.46667)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.367188, -0.25, 0, 0.25, 0, 0.273438, -0.25, 0, 0.25, 0, 0.398438, -0.25, 0, 0.25, 0, 0.273438, -0.25, 0, 0.25, 0, 0.367188, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.0166667, 0.233333, 0.6, 1.06667, 1.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-4.76837e-07, -0.25, 0, 0.25, 0, -2.84217e-14, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.233333, 0.7, 1.1, 1.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-0.25, -0.25, 0, 0.25, 0, 0.25, -0.25, 0, 0.25, 0, -18, -0.25, 0, 0.25, 0, -2.38419e-07, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.233333, 0.7, 1.1, 1.5)
+}
+
+[sub_resource type="Animation" id="Animation_hwht8"]
+resource_name = "shufle"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.40625, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0, 0.40625, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.367188, -0.25, 0, 0.25, 0, 0.34375, -0.25, 0, 0.25, 0, 0.367188, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:speedanimmod")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0, 0.7, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_up387"]
+_data = {
+"Hop": SubResource("Animation_e1q4k"),
+"RESET": SubResource("Animation_o0jlo"),
+"Walk": SubResource("Animation_ap1um"),
+"hop": SubResource("Animation_uoo8v"),
+"shufle": SubResource("Animation_hwht8")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rxru1"]
+radius = 9.05539
+
+[node name="Eraser" type="CharacterBody2D" groups=["Eraser"]]
+z_index = 1
+collision_layer = 5
+script = ExtResource("1_ipnig")
+damage = 0.02
+speed = 30
+health = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_da1tn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_up387")
+}
+autoplay = "hop"
+
+[node name="Area2D" type="Area2D" parent="." groups=["Eraser"]]
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_rxru1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.76837e-07, -0.25)
+scale = Vector2(0.40625, 0.40625)
+sprite_frames = ExtResource("2_1ycdq")

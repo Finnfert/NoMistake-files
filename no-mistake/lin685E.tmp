@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmfg4y7tsocik"]
+
+[ext_resource type="Script" path="res://line_drawer.gd" id="1_vqhj1"]
+[ext_resource type="PackedScene" uid="uid://6p8omejybd67" path="res://line_node.tscn" id="2_us24j"]
+
+[node name="LineDrawer" type="Node2D"]
+script = ExtResource("1_vqhj1")
+max_resource = 999999.0
+line_scene = ExtResource("2_us24j")

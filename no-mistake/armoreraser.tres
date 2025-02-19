@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://unfj3wpd68ba"]
+
+[ext_resource type="Texture2D" uid="uid://b74iusvjoxa0q" path="res://Sprites/Eraser.png" id="1_75qrh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8r1b"]
+atlas = ExtResource("1_75qrh")
+region = Rect2(0, 256, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8r1b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

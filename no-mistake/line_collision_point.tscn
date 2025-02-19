@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://buplfgp8vwpdl"]
+
+[ext_resource type="Script" path="res://line_collision_point.gd" id="1_dg2w5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lqlx0"]
+radius = 8.0
+
+[node name="Line collision point" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_dg2w5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lqlx0")
